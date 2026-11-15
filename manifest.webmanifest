@@ -1,0 +1,19 @@
+{
+  "name": "Sandık — PDF ve Görsel Araçları",
+  "short_name": "Sandık",
+  "description": "Tarayıcıda çalışan ücretsiz PDF, görsel ve QR araçları. Dosyalar cihazdan çıkmaz.",
+  "lang": "tr",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#faf8f5",
+  "theme_color": "#12161c",
+  "categories": ["productivity", "utilities"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

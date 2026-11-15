@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://oyunlarinkrali83-byte.github.io/sandik/sitemap.xml

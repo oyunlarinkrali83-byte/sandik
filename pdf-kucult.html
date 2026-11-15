@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PDF küçült — dosya boyutunu düşür | Sandık</title>
+<meta name="description" content="Taranmış PDF'leri sıkıştır: DPI ve kalite ayarla, dosya boyutunu ciddi biçimde düşür. Tarayıcıda, ücretsiz.">
+<meta name="color-scheme" content="light dark">
+<meta name="format-detection" content="telephone=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Sandık">
+<meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d1014" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://oyunlarinkrali83-byte.github.io/sandik/pdf-kucult.html">
+<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sandık">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="PDF küçült — dosya boyutunu düşür | Sandık">
+<meta property="og:description" content="Taranmış PDF'leri sıkıştır: DPI ve kalite ayarla, dosya boyutunu ciddi biçimde düşür. Tarayıcıda, ücretsiz.">
+<meta property="og:url" content="https://oyunlarinkrali83-byte.github.io/sandik/pdf-kucult.html">
+<meta property="og:image" content="https://oyunlarinkrali83-byte.github.io/sandik/icons/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sandık — dosya işlerini tarayıcında bitir">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem("sandik-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<script defer src="assets/js/config.js"></script>
+<script defer src="assets/js/core.js"></script>
+<script defer src="libs/pdf-lib.min.js"></script>
+<script defer src="libs/pdf.min.js"></script><script defer src="assets/js/tools/pdfshrink.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">İçeriğe geç</a>
+<noscript><div style="padding:12px 20px;background:#fdf3dc;color:#8a5a00;font:14px system-ui;text-align:center">Sandık'ın araçları tarayıcıda JavaScript ile çalışır. Lütfen JavaScript'i açıp sayfayı yenile.</div></noscript>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Sandık, ana sayfa">
+      <img class="brand-mark" src="icons/logo.svg" alt="" width="34" height="34">
+      Sandık
+    </a>
+    <nav class="nav" aria-label="Ana menü">
+      <a href="index.html#araclar">Araçlar</a>
+      <a href="index.html#nasil" class="nav-optional">Nasıl çalışır</a>
+      <a href="index.html#sss" class="nav-optional">SSS</a>
+      <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Temayı değiştir">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+<section class="page-head">
+  <div class="wrap narrow">
+    <nav class="breadcrumb" aria-label="Konum"><a href="index.html">Ana sayfa</a><span>/</span><span>PDF Küçült</span></nav>
+    <h1>PDF küçült</h1>
+    <p class="lead">Taranmış PDF'lerin boyutunu düşür: her sayfa görüntüye çevrilip yeniden paketlenir. Metin aranabilirliği kaybolur.</p>
+  </div>
+</section>
+<main id="main" class="wrap narrow" style="padding-bottom:56px">
+  <div class="panel">
+    <div class="panel-title"><span class="step">1</span> PDF'ini ekle</div>
+    <div class="dropzone" id="drop">
+  <input type="file" id="file" accept="application/pdf,.pdf" aria-label="Dosya seç">
+  <svg class="dz-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="M7 9l5-5 5 5"/><path d="M4 20h16"/></svg>
+  <div class="dz-title">PDF'i buraya bırak</div>
+  <div class="dz-sub">veya dokunup seç · tek dosya</div>
+</div>
+  </div>
+
+  <div class="panel hidden" id="options">
+    <div class="panel-title"><span class="step">2</span> Küçültme ayarları</div>
+    <div class="alert alert-warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L2.6 17.4A2 2 0 0 0 4.3 20.5h15.4a2 2 0 0 0 1.7-3.1L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg> <div><strong>Dikkat:</strong> Bu yöntem sayfaları JPEG görüntüye çevirir. PDF'teki metin artık seçilemez, aranamaz ve kopyalanamaz. Tarama/fotoğraf ağırlıklı PDF'ler için uygundur; sözleşme gibi metin belgeleri için değil.</div></div>
+    <div class="grid-3 mt-16">
+      <div class="field">
+        <label for="dpi">Çözünürlük</label>
+        <select class="select" id="dpi">
+          <option value="72">72 DPI — en küçük</option>
+          <option value="96" selected>96 DPI — küçük</option>
+          <option value="120">120 DPI — dengeli</option>
+          <option value="150">150 DPI — net</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="quality">JPEG kalitesi</label>
+        <div class="range-row"><input type="range" id="quality" min="40" max="95" value="65"><output id="qualityOut">65</output></div>
+      </div>
+      <div class="field">
+        <label for="gray">Renk</label>
+        <select class="select" id="gray">
+          <option value="0" selected>Renkli</option>
+          <option value="1">Gri tonlama (daha küçük)</option>
+        </select>
+      </div>
+    </div>
+    <div class="row mt-16" style="margin-top:16px">
+      <button class="btn btn-primary" id="go" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3v4a2 2 0 0 1-2 2H3"/><path d="M15 3v4a2 2 0 0 0 2 2h4"/><path d="M9 21v-4a2 2 0 0 0-2-2H3"/><path d="M15 21v-4a2 2 0 0 1 2-2h4"/></svg> PDF'i küçült</button>
+      <span class="spacer"></span>
+      <span class="muted small" id="summary"></span>
+    </div>
+    <div class="progress-wrap hidden" id="prog">
+  <div class="progress"><i></i></div>
+  <div class="progress-label"><span>İşleniyor</span><span></span></div>
+</div>
+  </div>
+  <div id="result" class="result hidden" aria-live="polite"></div>
+  <div class="ad-slot" data-format="auto" hidden></div>
+  <section class="related"><h2>Diğer araçlar</h2><div class="tool-grid"><a class="tool-card" href="pdf-birlestir.html">
+  <div class="tc-top"><span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="11" height="14" rx="2"/><path d="M9 21h9a2 2 0 0 0 2-2V9"/><path d="M11 10h6M14 7v6"/></svg></span><span class="tag">PDF</span></div>
+  <h3>PDF Birleştir</h3><p>Birden fazla PDF'yi sıraya koyup tek dosya yap.</p></a><a class="tool-card" href="pdf-gorsel.html">
+  <div class="tc-top"><span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2.5"/><circle cx="9" cy="9" r="1.6"/><path d="M3.5 16.5l4.5-3.8 3.6 2.8 2.9-2.2 5 4.2"/></svg></span><span class="tag">PDF</span></div>
+  <h3>PDF'i Görsele Çevir</h3><p>Her sayfayı JPG veya PNG olarak indir.</p></a><a class="tool-card" href="gorsel-sikistir.html">
+  <div class="tc-top"><span class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v6M12 21v-6"/><path d="M8 7l4-4 4 4M8 17l4 4 4-4"/><path d="M4 12h4M16 12h4"/></svg></span><span class="tag">GÖRSEL</span></div>
+  <h3>Görsel Sıkıştır</h3><p>Fotoğrafı hedef boyuta kadar küçült.</p></a></div></section><section class="section-tight"><h2>Sık sorulan sorular</h2><div class="faq"><details class="qa"><summary>Ne kadar küçülür?</summary><div class="qa-body"><p>Kaynağa göre değişir. Taranmış, 300 DPI, renkli PDF'lerde yüzde 60–90 küçülme olur. Metin ağırlıklı PDF'lerde kazanç az olabilir, hatta dosya büyüyebilir; araç bunu söyler.</p></div></details><details class="qa"><summary>Metin neden kayboluyor?</summary><div class="qa-body"><p>Sayfayı görüntü olarak yeniden ürettiğimiz için yazı, resim haline gelir. Görüntü olarak okunur ama aranamaz.</p></div></details><details class="qa"><summary>Hangi PDF'ler için uygun?</summary><div class="qa-body"><p>Telefonla çekilmiş belgeler, taranmış kitaplar, sunum çıktıları. E-imzalı veya form alanlı PDF'lerde kullanma.</p></div></details></div></section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <img class="brand-mark" src="icons/logo.svg" alt="" width="34" height="34">
+          Sandık
+        </a>
+        <p>Tarayıcıda çalışan ücretsiz dosya araçları. Dosyaların cihazından çıkmaz, hesap gerekmez.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Araçlar</h4>
+          <ul><li><a href="pdf-birlestir.html">PDF Birleştir</a></li><li><a href="pdf-sayfa-duzenle.html">Sayfa Düzenle</a></li><li><a href="pdf-gorsel.html">PDF'i Görsele Çevir</a></li><li><a href="gorsel-pdf.html">Görselden PDF</a></li><li><a href="gorsel-sikistir.html">Görsel Sıkıştır</a></li><li><a href="pdf-kucult.html">PDF Küçült</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="hakkinda.html">Hakkında</a></li>
+            <li><a href="gizlilik.html">Gizlilik</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+            <li><a href="index.html#sss">Sık sorulanlar</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Sandık</span>
+      <span class="spacer"></span>
+      <span>Tüm işlemler cihazında · Reklamlarla ayakta</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
